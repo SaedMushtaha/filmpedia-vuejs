@@ -9,7 +9,7 @@
       <div class="flex flex-wrap justify-around">
         <div v-for="img of imgs" :key="img.title" class="w-64 bg-purple-300 p-3 rounded-md mt-4">
           <img :src="img.poster" alt="">
-          <h3 class="text-xl font-extrabold">{{img.title}}</h3>
+          <h3 class="text-xl font-extrabold">{{img.vote_average}}</h3>
           <span>{{img.date}}</span>
         </div>
       </div>
