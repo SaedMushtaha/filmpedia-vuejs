@@ -68,7 +68,7 @@
     </nav>
 
     <aside
-      class=" h-full w-64 text-black bg-white-700 fixed inset-y-0 overflow-x-hidden overflow-y-auto md:block  lg:block absolute inset-0 flex justify-center items-center z-10"
+      class=" h-full w-64 text-black bg-white-700 fixed inset-y-0 overflow-x-hidden overflow-y-auto md:block  lg:block   inset-0 flex justify-center items-center z-10"
       id="style-11" v-bind:class="[activeClass]"
     >
       <div class="w-full h-full bg-white px-1 absolute ">
