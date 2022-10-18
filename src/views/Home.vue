@@ -135,6 +135,30 @@
 
     <main class="sm:pl-64 md:pl-64">
       <div class="container px-2 py-10 mx-auto">
+        <a href="#">
+            <div class="relative mb-8">
+              <div class="flex flex-1">
+              <img
+                class=" max-w-3xl object-cover overflow-hidden rounded-lg rounded-tl-2xl rounded-bl-2xl shadow-xl dark:shadow-gray-800 mx-auto"
+                style="filter: brightness(0.6);"
+                src="https://image.tmdb.org/t/p/original//5hoS3nEkGGXUfmnu39yw1k52JX5.jpg"
+              />
+            </div>
+              <figcaption
+                style="margin-left: 150px"
+                class="absolute max-w-md bottom-0 z-90 bg-black/50 px-5 py-2 text-white"
+              >
+                <h1 class="text-xl font-bold">
+                  Fullmetal Alchemist: The Final Alchemy
+                </h1>
+                <p class="mt-1 italic text-sm font-light">
+                  The Elric brothers’ long and winding journey comes to a close
+                  in this epic finale, where they must face off against an
+                  unworldly, nationwide threat.
+                </p>
+              </figcaption>
+            </div>
+          </a>
       <div class="flex flex-wrap -m-2">
         <div v-for="img of imgs" :key="img.title" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-8 sm:px-4 mx-auto">
           <div class="transition duration-700 ease-in-out transform hover:scale-105 block relative rounded overflow-hidden bg-white shadow-md mx-auto mb-6">
