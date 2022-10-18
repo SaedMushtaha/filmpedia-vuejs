@@ -165,7 +165,7 @@
             <a href="" :title="img.title">
               <img class="object-cover object-center h-full w-full block" :src="img.poster">
             </a>
-            <div class="ml-2 my-4">
+            <div class="ml-2 my-4 grid place-items-center">
               <h2 class="text-gray-900 title-font text-lg font-medium truncate">{{img.title}}</h2>
               <h3 class="text-gray-700 text-xs tracking-widest title-font mb-1"><div class="flex mb-5 mx-8">
                 <svg
