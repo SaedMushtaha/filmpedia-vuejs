@@ -13,6 +13,10 @@
             aria-controls="navbarSupportedContentY"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            v-on:click="toggle"
+            @click="isActive = !isActive"
+            id="menubu"
+            
           >
             <svg
               aria-hidden="true"
@@ -64,10 +68,10 @@
     </nav>
 
     <aside
-      class="w-64 text-black bg-white-700 fixed inset-y-0 overflow-x-hidden overflow-y-auto sm:block"
-      id="style-11"
+      class="w-64 text-black bg-white-700 fixed inset-y-0 overflow-x-hidden overflow-y-auto md:block  lg:block"
+      id="style-11" v-bind:class="[activeClass]"
     >
-      <div class="w-full h-full shadow-md bg-white px-1 absolute ">
+      <div class="w-full h-full bg-white px-1 absolute ">
         <div class="divide-y divide-gray-400 hover:divide-y-8 ">
           <div class="flex items-center mx-8 mt-6">
             <a
@@ -129,43 +133,17 @@
       </div>
     </aside>
 
-    <main class="sm:pl-64">
-      <div class="p-4 flex justify-center">
-        <div
-          class=" bg-white w-96 rounded shadow font-semibold text-center hover:shadow-md"
-        >
-          <a href="#">
-            <div class="relative">
-              <img
-                class=" max-w-3xl rounded-lg shadow-xl dark:shadow-gray-800 mx-auto"
-                style="filter: brightness(0.6);"
-                src="https://image.tmdb.org/t/p/original//5hoS3nEkGGXUfmnu39yw1k52JX5.jpg"
-              />
-              <figcaption
-                style="margin-left: 150px"
-                class="absolute max-w-md bottom-0 z-90 bg-black/50 px-5 py-2 text-white"
-              >
-                <h1 class="text-xl font-bold">
-                  Fullmetal Alchemist: The Final Alchemy
-                </h1>
-                <p class="mt-1 italic text-sm font-light">
-                  The Elric brothers’ long and winding journey comes to a close
-                  in this epic finale, where they must face off against an
-                  unworldly, nationwide threat.
-                </p>
-              </figcaption>
-            </div>
-          </a>
-
-          <div class="flex flex-wrap justify-around">
-            <div v-for="img of imgs" :key="img.title" class="w-48 bg-white ">
-              <img
-                :src="img.poster"
-                class="my-8 rounded-md transform hover: transition duration-200 hover:scale-110"
-                alt=""
-              />
-              <h3 class="text-xl font-extrabold">{{ img.title }}</h3>
-              <div class="flex mb-5 mx-8">
+    <main class="sm:pl-64 md:pl-64">
+      <div class="container px-2 py-10 mx-auto">
+      <div class="flex flex-wrap -m-2">
+        <div v-for="img of imgs" :key="img.title" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-8 sm:px-4 mx-auto">
+          <div class="transition duration-700 ease-in-out transform hover:scale-105 block relative rounded overflow-hidden bg-white shadow-md mx-auto mb-6">
+            <a href="" :title="img.title">
+              <img class="object-cover object-center h-full w-full block" :src="img.poster">
+            </a>
+            <div class="ml-2 my-4">
+              <h2 class="text-gray-900 title-font text-lg font-medium truncate">{{img.title}}</h2>
+              <h3 class="text-gray-700 text-xs tracking-widest title-font mb-1"><div class="flex mb-5 mx-8">
                 <svg
                   aria-hidden="true"
                   class="w-5 h-5 text-yellow-400"
@@ -226,11 +204,12 @@
                     d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                   ></path>
                 </svg>
-              </div>
-            </div>
+              </div></h3>
+            </div>            
           </div>
         </div>
       </div>
+    </div>
     </main>
   </div>
 </template>
@@ -374,6 +353,7 @@ const imgTest =
   "https://image.tmdb.org/t/p/w1280/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg";
 export default {
   data: () => ({
+    activeClass: 'hidden',
     imgTest: imgTest,
     imgs: [],
     searchTerm: "",
@@ -462,6 +442,16 @@ export default {
         return acc;
       }, []);
     },
+    toggle() {
+       // this.activeClass= 'sm:block';
+
+      //this.activeClass === 'sm:block';
+  if (this.activeClass =='hidden') {
+    this.activeClass = 'block';
+  } else {
+    this.activeClass = 'hidden';
+  }
+},
   },
   mounted() {
     fetch(popURL)
