@@ -68,7 +68,7 @@
     </nav>
 
     <aside
-      class="w-64 text-black bg-white-700 fixed inset-y-0 overflow-x-hidden overflow-y-auto md:block  lg:block"
+      class="w-64 text-black bg-white-700 fixed inset-y-0 overflow-x-hidden overflow-y-auto md:block  lg:block absolute inset-0 flex justify-center items-center z-10"
       id="style-11" v-bind:class="[activeClass]"
     >
       <div class="w-full h-full bg-white px-1 absolute ">
@@ -148,7 +148,7 @@
                 style="margin-left: 150px"
                 class="absolute max-w-md bottom-0 z-90 bg-black/50 px-5 py-2 text-white"
               >
-                <h1 class="text-xl font-bold">
+                <h1 class=" font-bold md:text-xl sm:text-sm">
                   Fullmetal Alchemist: The Final Alchemy
                 </h1>
                 <p class="mt-1 italic text-sm font-light">
