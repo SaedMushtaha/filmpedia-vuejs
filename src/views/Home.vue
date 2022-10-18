@@ -6,7 +6,7 @@
       <div class="px-6 w-full flex flex-wrap items-center justify-between">
         <div class="flex items-center">
           <button
-            class="navbar-toggler border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-white transition-shadow duration-150 ease-in-out mr-2"
+            class=" navbar-toggler border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-white transition-shadow duration-150 ease-in-out mr-2"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContentY"
@@ -16,7 +16,7 @@
             v-on:click="toggle"
             @click="isActive = !isActive"
             id="menubu"
-            
+            v-bind:class="[activemargin]"
           >
             <svg
               aria-hidden="true"
@@ -68,7 +68,7 @@
     </nav>
 
     <aside
-      class="w-64 text-black bg-white-700 fixed inset-y-0 overflow-x-hidden overflow-y-auto md:block  lg:block absolute inset-0 flex justify-center items-center z-10"
+      class=" h-full w-64 text-black bg-white-700 fixed inset-y-0 overflow-x-hidden overflow-y-auto md:block  lg:block absolute inset-0 flex justify-center items-center z-10"
       id="style-11" v-bind:class="[activeClass]"
     >
       <div class="w-full h-full bg-white px-1 absolute ">
@@ -378,6 +378,7 @@ const imgTest =
 export default {
   data: () => ({
     activeClass: 'hidden',
+    activemargin:'',
     imgTest: imgTest,
     imgs: [],
     searchTerm: "",
@@ -472,8 +473,10 @@ export default {
       //this.activeClass === 'sm:block';
   if (this.activeClass =='hidden') {
     this.activeClass = 'block';
+    this.activemargin = 'ml-64'
   } else {
     this.activeClass = 'hidden';
+    this.activemargin = ''
   }
 },
   },
